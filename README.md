@@ -8,9 +8,50 @@ previous ones, and ends with something that actually runs. Work through them in 
 Claude as a coach (see [`COACHING.md`](COACHING.md)) and tick them off in
 [`PROGRESS.md`](PROGRESS.md).
 
+## Getting started
+
+**1. Install the toolchain** (rustup manages Rust versions, a bit like `nvm`):
+
+```sh
+# macOS / Linux / WSL
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Windows: download and run rustup-init.exe from https://rustup.rs
+```
+
+Restart your terminal, then:
+
+```sh
+rustc --version && cargo --version
+rustup component add clippy rustfmt rust-analyzer
+```
+
+**2. Set up your editor.** In VS Code, install the **rust-analyzer** extension (not the old
+"Rust" one) and add this to your settings so clippy runs on save:
+
+```json
+"rust-analyzer.check.command": "clippy"
+```
+
+JetBrains users: RustRover is free for non-commercial use.
+
+**3. Clone and check everything works:**
+
+```sh
+git clone https://github.com/<your-username>/rust-course.git
+cd rust-course
+cargo build
+cargo test -p wordcount
+```
+
+The build should succeed and the tests should **fail** with `not yet implemented`. That's
+project 1 waiting for you. (More detail and review questions in
+[Project 0](projects/00-setup/README.md).)
+
+**4. Start learning.** Open a chat with Claude and say **"let's start project 1"**.
+
 ## How to use this repo
 
-1. Do [Project 0](projects/00-setup/README.md) to install the toolchain.
+1. Complete the [Getting started](#getting-started) steps above (= Project 0).
 2. Open a chat with Claude, point it at this repo, and say **"let's start project N"**.
    Claude reads `COACHING.md` and walks you through the brief, one milestone at a time.
 3. Write the code yourself. Ask for hints, not answers (the coaching notes enforce this).
