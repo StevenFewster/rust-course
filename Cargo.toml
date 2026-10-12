@@ -1,0 +1,10 @@
+[workspace]
+resolver = "3"
+# Add each project here as you create it (projects 2, 4–7 start from `cargo new`).
+members = [
+    "projects/01-wordcount",
+    "projects/03-calc",
+]
+
+[workspace.package]
+edition = "2024"
