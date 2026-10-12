@@ -37,7 +37,7 @@ JetBrains users: RustRover is free for non-commercial use.
 **3. Clone and check everything works:**
 
 ```sh
-git clone https://github.com/<your-username>/rust-course.git
+git clone https://github.com/StevenFewster/rust-course.git
 cd rust-course
 cargo build
 cargo test -p wordcount
